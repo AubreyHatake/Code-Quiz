@@ -4,12 +4,21 @@
 
 }
 
-.li {
-    border-style: inset;
-    border-radius: 20%;
+button {
+     border-style: double;
     border-color: violet;
+    border-width: 5px; 
     text-align: center;
+    justify-content: center;
 
+}
+
+div {
+    padding-top: 20px;
+    font-size: large;
+    font-family: Georgia;
+    font-weight: bold;
+    text-align: center;
 }
 
 .heads {
