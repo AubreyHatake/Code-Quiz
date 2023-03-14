@@ -1,0 +1,17 @@
+* {
+    margin: 0px;
+    padding: 5px;
+
+}
+
+.li {
+    border-style: inset;
+    border-radius: 20%;
+    border-color: violet;
+    text-align: center;
+
+}
+
+.heads {
+    text-align: center;
+}
