@@ -5,15 +5,21 @@
 }
 
 button {
-    column-count: 4;
+    /* I need to find a way to stack all the buttons into a row. */
+    display: table-column-group;
     columns: center;
-    float: center;
+    /* columns: center;
+    float: center; */
     /* border-style: solid; */
-    background-color: rgb(212, 117, 184);
+    font-weight: bold;
+    font-family: "Cambria";
+    color: black;
+    border-color: rgba(189, 52, 148, 0.658);
+    background-color: rgba(189, 52, 148, 0.658);
     border-width: 5px; 
     border-radius: 10%;
     text-align: center;
-    margin-left: 300px
+    /* margin-left: 50px; */
 }
 
 div {
