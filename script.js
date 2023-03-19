@@ -1,7 +1,7 @@
 // I need to create multiple buttons and variables that will take the user to the next question wihtin the main container.
-var mainEl = document.querySelector(".main")
 var mainContainer = document.querySelector(".main-container")
-var button = document.querySelector(".button")
+var btn = document.querySelector(".button")
+var mainEl = document.querySelector(".main")
 var currentQuestion = 0;
 // I need an array of questions to create functions that will show each question and choices after an event (click) happens
 var questions = [
@@ -13,8 +13,8 @@ var questions = [
     },
     {
         question: "String values need to be enclosed with..",
-        choices: ["1."," ", "2. ()", "3. []", "4. {}"],
-        choice: "1.",""
+        choices: ["1. quotes ", "2. ()", "3. []", "4. {}"],
+        choice: "1. quotes"
     },
     {
         question: "Array in JavaScript can be used to store _______.",
@@ -27,15 +27,42 @@ var questions = [
         choice: "2. curly brackets"
     }
 ];
-
+// the purpose of this function is to get the questions to display after a click along with the choices. The for loop in this function is to activate the four choice buttons that display with each question. 
 function displayQuestions () {
     var getCurrQuest = questions[currentQuestion];
     var h1El = document.createElement("h1");
     h1El.innerHTML = getCurrQuest.question;
     mainContainer.appendChild(h1El);
+    for (let i = 0; i < getCurrQuest.choices.length; i++) {
+        var choicesBtn = document.createElement("button");
+        choicesBtn.innerHTML = getCurrQuest.choices[i]
+        mainContainer.appendChild(choicesBtn);
+    }
+    
+}
+
+btn.addEventListener("click", displayQuestions);
+
+function getChoices (event) {
+    var getCurrQuest = questions[currentQuestion];
+    var element = event.target.innerHTML;
+    if(element) {
+        currentQuestion++;
+        console.log(currentQuestion)
+        document.querySelector(".main-container").innerHTML = "";
+        displayQuestions()
+            if (element === getCurrQuest.choice) {
+                alert("good job!")
+                return null;
+            } else {
+                alert("try harder :/")
+                return null;
+            }
+    } 
 }
 
 
+mainContainer.addEventListener("click", getChoices);
 //  I need to link highscores to the veiw highscores text on the top left of the page.
 // I need to create a box to display the user's score 
 // I need to create local storage to store all the highscores
