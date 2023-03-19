@@ -29,7 +29,8 @@ var questions = [
 ];
 
 function displayQuestions () {
-    
+    var getCurrQuest = questions[currentQuestion];
+    var h1El = document.createElement("h1");
 }
 
 
