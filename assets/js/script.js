@@ -52,6 +52,11 @@ function displayQuestions () {
 
 btn.addEventListener("click", displayQuestions);
 
+// This function will show the user a visable timer while they take the quiz
+function displayTime () {
+    timeEl.innerHTML = ('Timer' + time);
+    
+}
 // in this function I am trying to get the page to go to the next question after a click has happened
 function getChoices (event) {
     var getCurrQuest = questions[currentQuestion];
