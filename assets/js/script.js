@@ -29,6 +29,7 @@ var questions = [
 ];
 // the purpose of this function is to get the questions to display after a click along with the choices. The for loop in this function is to activate the four choice buttons that display with each question. 
 function displayQuestions () {
+    mainEl.classList.add("hide")
     var getCurrQuest = questions[currentQuestion];
     var h1El = document.createElement("h1");
     h1El.innerHTML = getCurrQuest.question;
@@ -53,9 +54,11 @@ function getChoices (event) {
         document.querySelector(".main-container").innerHTML = "";
         displayQuestions()
             if (element === getCurrQuest.choice) {
+              // if the question is answered correctly then this alert will pop up 
                 alert("good job!")
                 return null;
             } else {
+                // else is for if the question is answered incorrectly this alert will pop up
                 alert("try harder :/")
                 return null;
             }
