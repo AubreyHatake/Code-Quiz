@@ -3,6 +3,7 @@ var mainContainer = document.querySelector(".main-container")
 var btn = document.querySelector(".button")
 var mainEl = document.querySelector(".main")
 var currentQuestion = 0;
+var time = 60;
 // I need an array of questions to create functions that will show each question and choices after an event (click) happens
 var questions = [
     {
