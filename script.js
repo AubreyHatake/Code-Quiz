@@ -43,6 +43,7 @@ function displayQuestions () {
 
 btn.addEventListener("click", displayQuestions);
 
+// in this function I am trying to get the page to go to the next question after a click has happened
 function getChoices (event) {
     var getCurrQuest = questions[currentQuestion];
     var element = event.target.innerHTML;
