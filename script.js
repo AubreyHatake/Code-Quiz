@@ -31,6 +31,8 @@ var questions = [
 function displayQuestions () {
     var getCurrQuest = questions[currentQuestion];
     var h1El = document.createElement("h1");
+    h1El.innerHTML = getCurrQuest.question;
+    mainContainer.appendChild(h1El);
 }
 
 
