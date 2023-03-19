@@ -1,9 +1,10 @@
 // I need to create multiple buttons that will take the user to the next question wihtin the main container.
 // this will be the main container variable 
 var mainContainer = document.querySelector(".main-container")
-// 1. start button
+// start button
 var button = document.querySelector(".button")
-// 2. I need an array of questions to create functions that will show each question and choices after an event (click) happens
+var currentQuestion = 0;
+// I need an array of questions to create functions that will show each question and choices after an event (click) happens
 var questions = [
     {
         question: "Commanly used data types do NOT include:",
