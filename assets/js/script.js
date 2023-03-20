@@ -3,7 +3,7 @@ var mainContainer = document.querySelector(".main-container")
 var btn = document.querySelector(".button")
 var mainEl = document.querySelector(".main")
 var timeEl = document.querySelector(".timer");
-var highScore = document.querySelector(".scores")
+var scoreEl = document.querySelector(".scores")
 var time = 60;
 var currentQuestion = 0;
 var scoreCount = 0;
@@ -99,14 +99,17 @@ mainContainer.addEventListener("click", getChoices);
 // I need to create a function to display scores 
 // I need to creat an EventListener to the view high score button to show the high score list
 
-// function storeScores() {
-//  count.textContent = scoreCount;
-//  localStorage.setItem("scoreCount", scoreCount);
-// }
+function setScore() {
+    var header = document.createElement("scores");
+    header.innerHTML = scoreCount;
+    localStorage.setItem("scoreCount");
+    
+}
 
-// function getScore(event) {
-//     var storedScore = localStorage.getItem("scoreCount")
-//     var element = event.target.innerHTML;
-// }
 
-// highScore.addEventListener("click", getScore);
+//  function getScore(event) {
+//      var storedScore = localStorage.getItem("scores")
+     
+//  }
+
+ scoreEl.addEventListener("click", setScore);
