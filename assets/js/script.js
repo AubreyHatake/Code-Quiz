@@ -2,9 +2,9 @@
 var mainContainer = document.querySelector(".main-container")
 var btn = document.querySelector(".button")
 var mainEl = document.querySelector(".main")
-var currentQuestion = 0;
 var timeEl = document.querySelector(".timer");
 var time = 60;
+var currentQuestion = 0;
 // I need an array of questions to create functions that will show each question and choices after an event (click) happens
 var questions = [
     {
@@ -31,11 +31,25 @@ var questions = [
 ];
 
 
+// This function will show the user a visable timer while the user takes the quiz. 
+// In this function there is an if statement that will make it so the timer stops at 0
+function displayTime () {
+    timeEl.innerHTML = `Timer: ${time}`;
+    var timeInt = setInterval(() => {
+        time--;
+        timeEl.innerHTML = `Timer: ${time}`;
+        if (time <= 0) {
+            timeEl.innerHTML = `Timer: ${0}`;
+            clearInterval(timeInt);
+        }
+    }, 1000);       
+} 
 
 // the purpose of this function is to get the questions to display after a click along with the choices. The for loop in this function is to activate the four choice buttons that display with each question. 
 function displayQuestions () {
     mainEl.classList.add("hide")
     btn.classList.add("hide")
+    displayTime();
     var getCurrQuest = questions[currentQuestion];
     var h1El = document.createElement("h1");
     h1El.innerHTML = getCurrQuest.question;
@@ -53,19 +67,6 @@ function displayQuestions () {
 
 btn.addEventListener("click", displayQuestions);
 
-// This function will show the user a visable timer while they take the quiz. 
-// In this function there is an if statement that will make it so the timer stops at 0
-function displayTime () {
-    timeEl.innerHTML = `Timer: ${time}`;
-    var timeInt = setInterval(() => {
-        time--;
-        timeEl.innerHTML = `Timer: ${time}`;
-        if (time <= 0) {
-            timeEl.innerHTML = `Timer: ${0}`;
-            clearInterval(timeInt);
-        }
-    }, 1000);       
-} 
 // in this function I am trying to get the page to go to the next question after a click has happened
 function getChoices (event) {
     var getCurrQuest = questions[currentQuestion];
