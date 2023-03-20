@@ -40,4 +40,4 @@ THEN I can save my initials and score
 
 ## My site 
 
-![Code-Quiz](../OneDrive/Pictures/Screenshot%202023-03-19%20200510.jpg)
+![Code Quiz ](assets/Screenshot%202023-03-19%20200510.jpg)
