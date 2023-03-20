@@ -65,7 +65,6 @@ function displayQuestions () {
     
 }
 
-// document.choicesBtn.addClass(".button");
 
 
 btn.addEventListener("click", displayQuestions);

@@ -36,6 +36,11 @@ div {
     text-align: center;
 }
 
+.scores {
+    font-family: 'Lucida Sans';
+    color:rgba(189, 52, 148, 0.658); 
+}
+
 .heads {
     text-align: center;
 }
