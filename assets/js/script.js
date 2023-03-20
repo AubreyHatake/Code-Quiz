@@ -79,10 +79,12 @@ function getChoices (event) {
             if (element === getCurrQuest.choice) {
               // if the question is answered correctly then this alert will pop up 
                 alert("good job!")
+                time += 5;
                 return null;
             } else {
                 // else is for if the question is answered incorrectly this alert will pop up
                 alert("try harder :/")
+                time -= 10;
                 return null;
             }
     } 
