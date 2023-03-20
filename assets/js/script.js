@@ -3,8 +3,10 @@ var mainContainer = document.querySelector(".main-container")
 var btn = document.querySelector(".button")
 var mainEl = document.querySelector(".main")
 var timeEl = document.querySelector(".timer");
+var highScore = document.querySelector(".scores")
 var time = 60;
 var currentQuestion = 0;
+var scoreCount = 0;
 // I need an array of questions to create functions that will show each question and choices after an event (click) happens
 var questions = [
     {
@@ -62,7 +64,7 @@ function displayQuestions () {
     
 }
 
-// document.choicesBtn.addClass("button");
+// document.choicesBtn.addClass(".button");
 
 
 btn.addEventListener("click", displayQuestions);
@@ -92,7 +94,19 @@ function getChoices (event) {
 
 
 mainContainer.addEventListener("click", getChoices);
-//  I need to link highscores to the veiw highscores text on the top left of the page.
-// I need to create a box to display the user's score 
-// I need to create local storage to store all the highscores
-// I need to create a interval timer for the enter quiz
+
+// I need to create a function to store the high scores
+// I need to create a function to display scores 
+// I need to creat an EventListener to the view high score button to show the high score list
+
+// function storeScores() {
+//  count.textContent = scoreCount;
+//  localStorage.setItem("scoreCount", scoreCount);
+// }
+
+// function getScore(event) {
+//     var storedScore = localStorage.getItem("scoreCount")
+//     var element = event.target.innerHTML;
+// }
+
+// highScore.addEventListener("click", getScore);
