@@ -21,6 +21,7 @@
 
 .timer {
     color:rgba(189, 52, 148, 0.658);
+   float: right;
 }
 
 div {
