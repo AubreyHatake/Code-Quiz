@@ -5,9 +5,12 @@
 }
 
 .button {
+    margin: 5px;
+    margin-top: 10px;
+    width: 150px;
+    height: 60px;
     padding: 10px;
      display: block;
-    float: center;
     font-weight: bold;
     font-family: "Cambria";
     color: black;
@@ -15,8 +18,8 @@
     background-color: rgba(189, 52, 148, 0.658);
     border-width: 5px; 
     border-radius: 10%;
-    text-align: center;
-    margin-left: 585px;
+    text-align: left;
+    margin-left: 500px;
 }
 
 .timer {
@@ -25,7 +28,8 @@
 }
 
 div {
-    margin: 100px;
+    margin: 50px;
+    padding: 10px;
     font-size: 20px;
     font-family: Georgia;
     font-weight: bold;

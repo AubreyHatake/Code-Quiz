@@ -58,6 +58,7 @@ function displayQuestions () {
     mainContainer.appendChild(h1El);
     for (let i = 0; i < getCurrQuest.choices.length; i++) {
         var choicesBtn = document.createElement("button");
+        choicesBtn.classList.add('button')
         choicesBtn.innerHTML = getCurrQuest.choices[i]
         mainContainer.appendChild(choicesBtn);
     }
