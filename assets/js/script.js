@@ -99,23 +99,20 @@ function getChoices (event) {
 
 mainContainer.addEventListener("click", getChoices);
 
-// I need to create a function to store the high scores
-// I need to create a function to display scores 
-// I need to creat an EventListener to the view high score button to show the high score list
 
-
+// In this function, scores and kept in localStorage
 function scoreStorage() {
     localStorage.setItem('scores', scoreCount);
    
 }
 
+// This function allows the users score to be viewed when view scores is clicked 
 function displayScore(event) {
     scoreEl.textContent = scoreCount;
     var element = event.target.innerHTML;
     if (element) {
         document.querySelector(".score-container").innerHTML = "";
         displayScore();
-        mainContainer.classList.add("hide");
     }
   
 }
