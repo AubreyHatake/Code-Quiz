@@ -53,3 +53,8 @@ div {
 .hide {
     display: none;
 }
+
+.score-container {
+    font-family: 'Lucida Sans';
+    font-weight: bold;
+}

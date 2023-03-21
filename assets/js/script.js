@@ -1,12 +1,13 @@
 // I need to create multiple buttons and variables that will take the user to the next question wihtin the main container.
-var mainContainer = document.querySelector(".main-container")
-var btn = document.querySelector(".button")
-var mainEl = document.querySelector(".main")
+var mainContainer = document.querySelector(".main-container");
+var btn = document.querySelector(".button");
+var mainEl = document.querySelector(".main");
 var timeEl = document.querySelector(".timer");
-var scoreEl = document.querySelector(".scores")
+var scoreContainer = document.querySelector(".score-container");
+var scoreEl = document.querySelector(".scores");
 var time = 60;
 var currentQuestion = 0;
-var scoreCount = 0;
+var scoreCount = 10;
 // I need an array of questions to create functions that will show each question and choices after an event (click) happens
 var questions = [
     {
@@ -75,17 +76,19 @@ function getChoices (event) {
     var element = event.target.innerHTML;
     if(element) {
         currentQuestion++;
-        console.log(currentQuestion)
+        // console.log(currentQuestion)
         document.querySelector(".main-container").innerHTML = "";
         displayQuestions()
             if (element === getCurrQuest.choice) {
               // if the question is answered correctly then this alert will pop up 
                 alert("good job!")
+                scoreCount++;
                 time += 5;
                 return null;
             } else {
                 // else is for if the question is answered incorrectly this alert will pop up
                 alert("try harder :/")
+                scoreCount--;
                 time -= 10;
                 return null;
             }
@@ -99,17 +102,15 @@ mainContainer.addEventListener("click", getChoices);
 // I need to create a function to display scores 
 // I need to creat an EventListener to the view high score button to show the high score list
 
-function setScore() {
-    var header = document.createElement("scores");
-    header.innerHTML = scoreCount;
-    localStorage.setItem("scoreCount");
+function displayScore() {
+  
+}
+
+function scoreStorage() {
+    localStorage.setItem('scores', scoreCount);
     
 }
 
 
-//  function getScore(event) {
-//      var storedScore = localStorage.getItem("scores")
-     
-//  }
 
- scoreEl.addEventListener("click", setScore);
+  scoreEl.addEventListener("click", scoreStorage);
