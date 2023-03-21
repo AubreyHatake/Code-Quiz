@@ -109,11 +109,16 @@ function scoreStorage() {
    
 }
 
-function displayScore() {
-    var currentScore = localStorage.getItem("scores");
-document.getElementById("scores").value
+function displayScore(event) {
+    scoreEl.textContent = scoreCount;
+    var element = event.target.innerHTML;
+    if (element) {
+        document.querySelector(".score-container").innerHTML = "";
+        displayScore();
+        mainContainer.classList.add("hide");
+    }
   
 }
 
 
-  scoreEl.addEventListener("click", scoreStorage);
+  scoreEl.addEventListener("click", displayScore);
