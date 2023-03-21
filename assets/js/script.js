@@ -91,10 +91,11 @@ function getChoices (event) {
                 scoreCount--;
                 time -= 10;
                 return null;
-            }
-    } 
-}
 
+            } 
+        }
+        
+    } scoreStorage();
 
 mainContainer.addEventListener("click", getChoices);
 
@@ -102,15 +103,17 @@ mainContainer.addEventListener("click", getChoices);
 // I need to create a function to display scores 
 // I need to creat an EventListener to the view high score button to show the high score list
 
-function displayScore() {
-  
-}
 
 function scoreStorage() {
     localStorage.setItem('scores', scoreCount);
-    
+   
 }
 
+function displayScore() {
+    var currentScore = localStorage.getItem("scores");
+document.getElementById("scores").value
+  
+}
 
 
   scoreEl.addEventListener("click", scoreStorage);
